@@ -17,9 +17,6 @@ DECLARE_DELEGATE(FOnEnemyAttackCompleted);
 /** Landed delegate for StateTree */
 DECLARE_DELEGATE(FOnEnemyLanded);
 
-/** Enemy died delegate */
-DECLARE_MULTICAST_DELEGATE(FOnEnemyDied);
-
 /**
  *  An AI-controlled character with combat capabilities.
  *  Its bundled AI Controller runs logic through StateTree
@@ -131,10 +128,6 @@ public:
 
 	/** Landed internal delegate to notify StateTree tasks. We use this instead of the built-in Landed delegate so we can bind to a Lambda in StateTree tasks */
 	FOnEnemyLanded OnEnemyLanded;
-
-	/** Enemy died delegate. Allows external subscribers to respond to enemy death */
-	UPROPERTY(BlueprintAssignable, Category = "Events")
-	FOnEnemyDied OnEnemyDied;
 
 public:
 

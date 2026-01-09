@@ -224,9 +224,6 @@ void ACombatTest_Enemy::HandleDeath()
 	// enable full ragdoll physics
 	GetMesh()->SetSimulatePhysics(true);
 
-	// call the died delegate to notify any subscribers
-	OnEnemyDied.Broadcast();
-
 	// set up the death timer
 	GetWorld()->GetTimerManager().SetTimer(DeathTimer, this, &ACombatTest_Enemy::RemoveFromLevel, DeathRemovalTime);
 
